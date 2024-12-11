@@ -24,7 +24,8 @@ const Background = styled.div`
   height: 100%;
   width: 100%;
   z-index: 1;
-  background-color: rgba(0, 0, 0, 1);
+  background-color: ${({ hasImage }) =>
+    hasImage ? "rgba(0, 0, 0, 0.5)" : "rgba(255, 255, 255, 0.2)"};
   top: ${({ hasImage }) => (hasImage ? "2rem" : "0")};
   left: 0;
   right: 0;

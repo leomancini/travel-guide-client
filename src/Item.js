@@ -42,7 +42,7 @@ const Image = styled.img`
   position: relative;
   mask-image: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 1) 25%,
+    rgba(0, 0, 0, 1) 50%,
     rgba(0, 0, 0, 0)
   );
 `;

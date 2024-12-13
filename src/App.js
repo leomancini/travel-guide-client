@@ -92,7 +92,7 @@ const App = () => {
     fetchData();
   }, []);
 
-  if (!loading) {
+  if (loading) {
     return (
       <LoadingContainer>
         <LoadingDots>

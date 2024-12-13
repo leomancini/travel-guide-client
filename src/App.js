@@ -82,6 +82,7 @@ const App = () => {
 
         const result = await response.json();
         setData(result);
+        document.title = result.metadata.city;
       } catch (err) {
         setError(err.message);
       } finally {

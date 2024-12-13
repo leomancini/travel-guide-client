@@ -35,9 +35,9 @@ const Background = styled.div`
 
 const Image = styled.img`
   width: 100%;
-  height: 200px;
+  height: 300px;
   object-fit: cover;
-  object-position: center;
+  object-position: center 25%;
   z-index: 3;
   position: relative;
   mask-image: linear-gradient(

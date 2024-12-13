@@ -34,7 +34,7 @@ const Title = styled.h1`
   margin: 0;
   line-height: 1.25;
   color: rgba(255, 255, 255, 1);
-  text-shadow: 0px 0px 12px rgba(0, 0, 0, 1);
+  text-shadow: 0px 0px 12px rgba(0, 0, 0, 0.5);
   z-index: 2;
 `;
 

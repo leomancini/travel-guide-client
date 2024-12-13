@@ -109,11 +109,7 @@ const App = () => {
 
   return (
     <Page>
-      <Guide
-        city={data.metadata.city}
-        flavor={data.metadata.flavor}
-        data={data.attractions}
-      />
+      <Guide metadata={data.metadata} attractions={data.attractions} />
     </Page>
   );
 };

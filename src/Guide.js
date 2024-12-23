@@ -26,6 +26,8 @@ const BackgroundImage = styled.img`
   z-index: 1;
   opacity: 0.5;
   mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  user-select: none;
+  -webkit-user-drag: none;
 `;
 
 const Title = styled.h1`
@@ -73,7 +75,7 @@ export default function Guide({ metadata, attractions }) {
       </Header>
       <Items>
         {attractions.map((item) => (
-          <Item key={item.name} data={item} />
+          <Item key={item.name} data={item} city={metadata.city} />
         ))}
       </Items>
       <Disclaimer>

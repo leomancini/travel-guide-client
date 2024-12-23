@@ -136,7 +136,7 @@ const Button = styled.a`
   font-size: 1rem;
   line-height: 1.5rem;
   font-weight: bold;
-  padding: 0.675rem 1rem 0.875rem 1rem;
+  padding: 0.675rem 1rem 0.8rem 1rem;
   border-radius: 0.75rem;
   text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25), 0px 0px 12px rgba(0, 0, 0, 0.5);
   transform: translateZ(0);

@@ -87,7 +87,12 @@ const App = () => {
         if (result.metadata.emoji) {
           setFavicon(result.metadata.emoji);
         }
-        setTitle(`${result.metadata.city} - ${result.metadata.flavor}`);
+        setTitle(
+          `${result.metadata.city} - ${
+            result.metadata.flavor.charAt(0).toUpperCase() +
+            result.metadata.flavor.slice(1)
+          }`
+        );
       } catch (err) {
         setError(err.message);
       } finally {

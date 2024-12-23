@@ -38,6 +38,12 @@ const Title = styled.h1`
   color: rgba(255, 255, 255, 1);
   text-shadow: 0px 0px 12px rgba(0, 0, 0, 0.5);
   z-index: 2;
+
+  &::selection {
+    background: rgba(255, 255, 255, 1);
+    color: black;
+    text-shadow: none;
+  }
 `;
 
 const Subtitle = styled.h2`
@@ -48,6 +54,12 @@ const Subtitle = styled.h2`
   margin: 0;
   text-transform: uppercase;
   z-index: 2;
+
+  &::selection {
+    background: rgba(255, 255, 255, 1);
+    color: black;
+    text-shadow: none;
+  }
 `;
 
 const Items = styled.div`

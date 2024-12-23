@@ -143,6 +143,8 @@ const Button = styled.a`
   -webkit-transform: translateZ(0);
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
+  user-select: none;
+  -webkit-user-drag: none;
 
   box-shadow: inset 0px 1px 16px rgba(255, 255, 255, 0.05),
     inset 0px 1px 8px rgba(255, 255, 255, 0.05),

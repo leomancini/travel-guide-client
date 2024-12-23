@@ -88,7 +88,7 @@ const App = () => {
           setFavicon(result.metadata.emoji);
         }
         setTitle(
-          `${result.metadata.city} - ${
+          `${result.metadata.city} — ${
             result.metadata.flavor.charAt(0).toUpperCase() +
             result.metadata.flavor.slice(1)
           }`

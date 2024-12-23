@@ -59,6 +59,8 @@ const App = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [favicon, setFavicon] = useState("📓");
+  const [title, setTitle] = useState("Travel Guide");
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -82,8 +84,10 @@ const App = () => {
 
         const result = await response.json();
         setData(result);
-        setCurrentEmoji(result.metadata.emoji);
-        document.title = result.metadata.city;
+        if (result.metadata.emoji) {
+          setFavicon(result.metadata.emoji);
+        }
+        setTitle(`${result.metadata.city} - ${result.metadata.flavor}`);
       } catch (err) {
         setError(err.message);
       } finally {
@@ -94,20 +98,18 @@ const App = () => {
     fetchData();
   }, []);
 
-  const [currentEmoji, setCurrentEmoji] = useState("📓");
+  useEffect(() => {
+    const favicon =
+      document.querySelector('link[rel="icon"]') ||
+      document.createElement("link");
+    favicon.rel = "icon";
+    favicon.href = `data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>${favicon}</text></svg>`;
+    document.head.appendChild(favicon);
+  }, [favicon]);
 
   useEffect(() => {
-    const setFavicon = (emoji) => {
-      const favicon =
-        document.querySelector('link[rel="icon"]') ||
-        document.createElement("link");
-      favicon.rel = "icon";
-      favicon.href = `data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>${emoji}</text></svg>`;
-      document.head.appendChild(favicon);
-    };
-
-    setFavicon(currentEmoji);
-  }, [currentEmoji]);
+    document.title = title;
+  }, [title]);
 
   if (loading) {
     return (
